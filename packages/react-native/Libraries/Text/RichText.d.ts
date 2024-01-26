@@ -20,7 +20,7 @@ import {
   TextLayoutEventData,
 } from '../Types/CoreEventTypes';
 
-export interface TextPropsIOS {
+export interface RichTextPropsIOS {
   /**
    * Specifies whether font should be scaled down automatically to fit given style constraints.
    */
@@ -60,7 +60,7 @@ export interface TextPropsIOS {
     | undefined;
 }
 
-export interface TextPropsAndroid {
+export interface RichTextPropsAndroid {
   /**
    * Specifies the disabled state of the text view for testing purposes.
    */
@@ -102,9 +102,9 @@ export interface TextPropsAndroid {
 }
 
 // https://reactnative.dev/docs/text#props
-export interface TextProps
-  extends TextPropsIOS,
-    TextPropsAndroid,
+export interface RichTextProps
+  extends RichTextPropsIOS,
+    RichTextPropsAndroid,
     AccessibilityProps {
   /**
    * Specifies whether fonts should scale to respect Text Size accessibility settings.
@@ -214,6 +214,6 @@ export interface TextProps
 /**
  * A React component for displaying text which supports nesting, styling, and touch handling.
  */
-declare class TextComponent extends React.Component<TextProps> {}
-declare const TextBase: Constructor<NativeMethods> & typeof TextComponent;
-export class Text extends TextBase {}
+declare class RichTextComponent extends React.Component<RichTextProps> {}
+declare const RichTextBase: Constructor<NativeMethods> & typeof RichTextComponent;
+export class RichText extends RichTextBase {}

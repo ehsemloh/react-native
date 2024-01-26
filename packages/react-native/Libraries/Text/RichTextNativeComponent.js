@@ -14,10 +14,10 @@ import createReactNativeComponentClass from '../Renderer/shims/createReactNative
 import {type HostComponent} from '../Renderer/shims/ReactNativeTypes';
 import {type ProcessedColorValue} from '../StyleSheet/processColor';
 import {type PressEvent} from '../Types/CoreEventTypes';
-import {type TextProps} from './TextProps';
+import {type RichTextProps} from './RichTextProps';
 
-type NativeTextProps = $ReadOnly<{
-  ...TextProps,
+type NativeRichTextProps = $ReadOnly<{
+  ...RichTextProps,
   isHighlighted?: ?boolean,
   selectionColor?: ?ProcessedColorValue,
   onClick?: ?(event: PressEvent) => mixed,
@@ -68,12 +68,12 @@ const virtualTextViewConfig = {
   uiViewClassName: 'RCTVirtualText',
 };
 
-export const NativeText: HostComponent<NativeTextProps> =
+export const NativeRichText: HostComponent<NativeRichTextProps> =
   (createReactNativeComponentClass('RCTText', () =>
     createViewConfig(textViewConfig),
   ): any);
 
-export const NativeVirtualText: HostComponent<NativeTextProps> =
+export const NativeVirtualRichText: HostComponent<NativeRichTextProps> =
   !global.RN$Bridgeless && !UIManager.hasViewManagerConfig('RCTVirtualText')
     ? NativeText
     : (createReactNativeComponentClass('RCTVirtualText', () =>

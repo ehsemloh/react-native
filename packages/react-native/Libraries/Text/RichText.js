@@ -4,32 +4,31 @@
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  *
- * @flow strict-local
  * @format
  */
 
 import type {PressEvent} from '../Types/CoreEventTypes';
-import type {TextProps} from './TextProps';
+import type {RichTextProps} from './RichTextProps';
 
 import * as PressabilityDebug from '../Pressability/PressabilityDebug';
 import usePressability from '../Pressability/usePressability';
 import flattenStyle from '../StyleSheet/flattenStyle';
 import processColor from '../StyleSheet/processColor';
 import Platform from '../Utilities/Platform';
-import TextAncestor from './TextAncestor';
-import {NativeText, NativeVirtualText} from './TextNativeComponent';
+import RichTextAncestor from './RichTextAncestor';
+import {NativeRichText, NativeVirtualRichText} from './RichTextNativeComponent';
 import * as React from 'react';
 import {useContext, useMemo, useState} from 'react';
 
 /**
- * Text is the fundamental component for displaying text.
+ * RichText is the fundamental component for displaying rich text.
  *
  * @see https://reactnative.dev/docs/text
  */
-const Text: React.AbstractComponent<
+const RichText: React.AbstractComponent<
   TextProps,
   React.ElementRef<typeof NativeText | typeof NativeVirtualText>,
-> = React.forwardRef((props: TextProps, forwardedRef) => {
+> = React.forwardRef((props: RichTextProps, forwardedRef) => {
   const {
     accessible,
     accessibilityLabel,
@@ -203,7 +202,7 @@ const Text: React.AbstractComponent<
     numberOfLines = 0;
   }
 
-  const hasTextAncestor = useContext(TextAncestor);
+  const hasTextAncestor = useContext(RichTextAncestor);
 
   const _accessible = Platform.select({
     ios: accessible !== false,
@@ -243,7 +242,7 @@ const Text: React.AbstractComponent<
     props.onPress != null || props.onLongPress != null;
 
   return hasTextAncestor ? (
-    <NativeVirtualText
+    <NativeVirtualRichText
       {...restProps}
       {...eventHandlersForText}
       accessibilityLabel={ariaLabel ?? accessibilityLabel}
@@ -258,8 +257,8 @@ const Text: React.AbstractComponent<
       style={style}
     />
   ) : (
-    <TextAncestor.Provider value={true}>
-      <NativeText
+    <RichTextAncestor.Provider value={true}>
+      <NativeRichText
         {...restProps}
         {...eventHandlersForText}
         accessibilityLabel={ariaLabel ?? accessibilityLabel}
@@ -280,11 +279,11 @@ const Text: React.AbstractComponent<
         selectionColor={selectionColor}
         style={style}
       />
-    </TextAncestor.Provider>
+    </RichTextAncestor.Provider>
   );
 });
 
-Text.displayName = 'Text';
+RichText.displayName = 'RichText';
 
 /**
  * Switch to `deprecated-react-native-prop-types` for compatibility with future
@@ -320,4 +319,4 @@ const verticalAlignToTextAlignVerticalMap = {
   middle: 'center',
 };
 
-module.exports = Text;
+module.exports = RichText;

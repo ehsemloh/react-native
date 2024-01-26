@@ -13,12 +13,12 @@
 const React = require('react');
 
 /**
- * Whether the current element is the descendant of a <Text> element.
+ * Whether the current element is the descendant of a <RichText> element.
  */
-const TextAncestorContext = (React.createContext(
+const RichTextAncestorContext = (React.createContext(
   false,
 ): React$Context<$FlowFixMe>);
 if (__DEV__) {
-  TextAncestorContext.displayName = 'TextAncestorContext';
+  RichTextAncestorContext.displayName = 'RichTextAncestorContext';
 }
-module.exports = TextAncestorContext;
+module.exports = RichTextAncestorContext;
