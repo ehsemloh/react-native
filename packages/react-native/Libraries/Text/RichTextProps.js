@@ -42,7 +42,7 @@ type PointerEventProps = $ReadOnly<{|
 /**
  * @see https://reactnative.dev/docs/text#reference
  */
-export type TextProps = $ReadOnly<{|
+export type RichTextProps = $ReadOnly<{|
   ...PointerEventProps,
 
   /**
