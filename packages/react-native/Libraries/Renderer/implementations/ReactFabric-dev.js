@@ -5410,9 +5410,9 @@ function getChildHostContext(parentHostContext, type, rootContainerInstance) {
     type === "AndroidTextInput" || // Android
     type === "RCTMultilineTextInputView" || // iOS
     type === "RCTSinglelineTextInputView" || // iOS
-    type === "RCTText" ||
-    type === "RCTVirtualText"; // TODO: If this is an offscreen host container, we should reuse the
-  // parent context.
+    type === "RCTRichText" ||
+    type === "RCTVirtualText" || // TODO: If this is an offscreen host container, we should reuse the parent context.
+    type === "RCTRichVirtualText";
 
   if (prevIsInAParentText !== isInAParentText) {
     return {

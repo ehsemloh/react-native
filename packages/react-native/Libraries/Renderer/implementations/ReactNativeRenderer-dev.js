@@ -5422,7 +5422,9 @@ function getChildHostContext(parentHostContext, type, rootContainerInstance) {
     type === "RCTMultilineTextInputView" || // iOS
     type === "RCTSinglelineTextInputView" || // iOS
     type === "RCTText" ||
-    type === "RCTVirtualText";
+    type === "RCTRichText" ||
+    type === "RCTVirtualText" ||
+    type === "RCTRichVirtualText";
 
   if (prevIsInAParentText !== isInAParentText) {
     return {
