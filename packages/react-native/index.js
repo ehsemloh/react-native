@@ -167,7 +167,10 @@ module.exports = {
     return require('./Libraries/Components/Switch/Switch').default;
   },
   get Text(): Text {
-    return require('./Libraries/Text/RichText');
+    return require('./Libraries/Text/Text');
+  },
+  get RichText(): Text {
+    return require('./Libraries/RichText/RichText');
   },
   get TextInput(): TextInput {
     return require('./Libraries/Components/TextInput/TextInput');
