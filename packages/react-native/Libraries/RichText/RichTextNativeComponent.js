@@ -69,13 +69,13 @@ const virtualTextViewConfig = {
 };
 
 export const NativeRichText: HostComponent<NativeRichTextProps> =
-  (createReactNativeComponentClass('RCTText', () =>
+  (createReactNativeComponentClass('RCTRichText', () =>
     createViewConfig(textViewConfig),
   ): any);
 
 export const NativeVirtualRichText: HostComponent<NativeRichTextProps> =
   !global.RN$Bridgeless && !UIManager.hasViewManagerConfig('RCTVirtualText')
     ? NativeText
-    : (createReactNativeComponentClass('RCTVirtualText', () =>
+    : (createReactNativeComponentClass('RCTRichVirtualText', () =>
         createViewConfig(virtualTextViewConfig),
       ): any);
