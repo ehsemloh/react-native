@@ -289,7 +289,7 @@ RichText.displayName = 'RichText';
  * Switch to `deprecated-react-native-prop-types` for compatibility with future
  * releases. This is deprecated and will be removed in the future.
  */
-Text.propTypes = require('deprecated-react-native-prop-types').TextPropTypes;
+RichText.propTypes = require('deprecated-react-native-prop-types').TextPropTypes;
 
 /**
  * Returns false until the first time `newValue` is true, after which this will
