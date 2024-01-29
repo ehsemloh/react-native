@@ -118,6 +118,11 @@ const Components: Array<RNTesterModuleInfo> = [
     category: 'Basic',
   },
   {
+    key: 'RichTextExample',
+    module: require('../examples/RichText/RichTextExample.ios'),
+    category: 'Basic',
+  },
+  {
     key: 'TextInputExample',
     module: require('../examples/TextInput/TextInputExample'),
     category: 'Basic',
