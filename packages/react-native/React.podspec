@@ -52,5 +52,6 @@ Pod::Spec.new do |s|
   s.dependency "React-RCTNetwork", version
   s.dependency "React-RCTSettings", version
   s.dependency "React-RCTText", version
+  s.dependency "React-RCTRichText", version
   s.dependency "React-RCTVibration", version
 end

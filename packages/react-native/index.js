@@ -166,6 +166,9 @@ module.exports = {
   get Text(): Text {
     return require('./Libraries/Text/Text');
   },
+  get RichText(): Text {
+    return require('./Libraries/RichText/RichText');
+  },
   get TextInput(): TextInput {
     return require('./Libraries/Components/TextInput/TextInput');
   },

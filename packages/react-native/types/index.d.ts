@@ -136,6 +136,7 @@ export * from '../Libraries/StyleSheet/StyleSheet';
 export * from '../Libraries/StyleSheet/StyleSheetTypes';
 export * from '../Libraries/StyleSheet/processColor';
 export * from '../Libraries/Text/Text';
+export * from '../Libraries/RichText/RichText';
 export * from '../Libraries/TurboModule/RCTExport';
 export * as TurboModuleRegistry from '../Libraries/TurboModule/TurboModuleRegistry';
 export * from '../Libraries/Types/CoreEventTypes';
