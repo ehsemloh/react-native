@@ -581,6 +581,7 @@ class ReactNativePodsUtils
             "React-RCTPushNotification",
             "React-RCTSettings",
             "React-RCTText",
+            "React-RCTRichText",
             "React-RCTTest",
             "React-RCTVibration",
             "React-callinvoker",

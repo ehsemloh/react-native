@@ -56,7 +56,7 @@ const textViewConfig = {
       registrationName: 'onInlineViewLayout',
     },
   },
-  uiViewClassName: 'RCTText',
+  uiViewClassName: 'RCTRichText',
 };
 
 const virtualTextViewConfig = {
@@ -65,7 +65,7 @@ const virtualTextViewConfig = {
     isPressable: true,
     maxFontSizeMultiplier: true,
   },
-  uiViewClassName: 'RCTVirtualText',
+  uiViewClassName: 'RCTVirtualRichText',
 };
 
 export const NativeRichText: HostComponent<NativeRichTextProps> =
@@ -74,8 +74,8 @@ export const NativeRichText: HostComponent<NativeRichTextProps> =
   ): any);
 
 export const NativeVirtualRichText: HostComponent<NativeRichTextProps> =
-  !global.RN$Bridgeless && !UIManager.hasViewManagerConfig('RCTVirtualText')
-    ? NativeText
+  !global.RN$Bridgeless && !UIManager.hasViewManagerConfig('RCTRichVirtualText')
+    ? NativeRichText
     : (createReactNativeComponentClass('RCTRichVirtualText', () =>
         createViewConfig(virtualTextViewConfig),
       ): any);
