@@ -123,6 +123,7 @@ def use_react_native! (
   pod 'React-RCTNetwork', :path => "#{prefix}/Libraries/Network"
   pod 'React-RCTSettings', :path => "#{prefix}/Libraries/Settings"
   pod 'React-RCTText', :path => "#{prefix}/Libraries/Text"
+  pod 'React-RCTRichText', :path => "#{prefix}/Libraries/RichText"
   pod 'React-RCTVibration', :path => "#{prefix}/Libraries/Vibration"
   pod 'React-Core/RCTWebSocket', :path => "#{prefix}/"
   pod 'React-rncore', :path => "#{prefix}/ReactCommon"
